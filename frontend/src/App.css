@@ -535,7 +535,7 @@ footer {
 #sidebar ul li.active > a,
 a[aria-expanded='true'] {
   color: #fff;
-  
+
 }
 a[data-toggle='collapse'] {
   position: relative;
@@ -756,4 +756,10 @@ p#AboutUsParagraph {
   background-color: #ffffff83;
   justify-content: center;
   text-align: justify;
+}
+
+.PhoneInput--focus {
+  --PhoneInputCountryFlag-height: 30px;
+  --PhoneInputCountryFlag-borderColor: green;
+  --PhoneInput-color--focus: red;
 }

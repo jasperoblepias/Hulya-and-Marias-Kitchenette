@@ -1,11 +1,14 @@
 import React, { Fragment, useState } from 'react'
-//import { countries } from 'countries-list'
-
 import MetaData from '../layout/MetaData'
 import CheckoutSteps from './CheckoutSteps'
-
 import { useDispatch, useSelector } from 'react-redux'
 import { saveShippingInfo } from '../../actions/cartActions'
+//testing lines for phone number
+import parsePhoneNumber from 'libphonenumber-js'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
+
+
 
 const Shipping = ({ history }) => {
 
@@ -17,6 +20,9 @@ var regions = require('philippines/regions');
 var provinces = require('philippines/provinces');
 var cities = require('philippines/cities');
     //const philippines = Object.values(philippines)
+
+//testing sa phone number
+
 
     const { shippingInfo } = useSelector(state => state.cart)
 
@@ -77,7 +83,7 @@ var cities = require('philippines/cities');
                                 required
                             >
                                 <option> - </option>
-
+                                
                                 {cities.map(city => {
                                         if(city.province == 'MM') {
                                             return <option key={city.name} value={city.name}>{city.name}</option>
@@ -136,29 +142,18 @@ var cities = require('philippines/cities');
                             />
                         </div>
 
+                        
                         <div className="form-group">
                             <label htmlFor="phone_field">Phone No</label>
-                            <input
-                                type="phone"
-                                id="phone_field"
-                                className="form-control"
-                                value={phoneNo}
-                                onChange={(e) => setPhoneNo(e.target.value)}
-                                required
+                        <PhoneInput
+                            placeholder="Enter phone number"
+                            value={phoneNo}
+                            onChange ={setPhoneNo}
+                            required
                             />
                         </div>
 
-                        <div className="form-group">
-                            <label htmlFor="phone_field">Date of Order</label>
-                            <input
-                                type="date"
-                                id="date_field"
-                                className="form-control"
-                                value={date}
-                                onChange={(e) => setDate(e.target.value)}
-                                required
-                            />
-                        </div>
+
                         <button
                             id="shipping_btn"
                             type="submit"
