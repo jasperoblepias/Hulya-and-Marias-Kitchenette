@@ -13,7 +13,7 @@ const Special = ({ match }) => {
 
     const [currentPage] = useState(1)
     const [price] = useState([1, 1000])
-    const [category] = useState('Special')
+    const [category] = useState('SpecialOrders')
     const [rating] = useState(0)
 
     const alert = useAlert();

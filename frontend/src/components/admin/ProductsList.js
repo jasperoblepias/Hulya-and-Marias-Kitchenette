@@ -54,15 +54,15 @@ const ProductsList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
+                    label: 'Category',
+                    field: 'category',
+                    sort: 'asc'
+                },
+                {
                     label: 'Price',
                     field: 'price',
                     sort: 'asc'
                 },
-                // {
-                //     label: 'Stock',
-                //     field: 'stock',
-                //     sort: 'asc'
-                // },
                 {
                     label: 'Actions',
                     field: 'actions',
@@ -75,7 +75,8 @@ const ProductsList = ({ history }) => {
             data.rows.push({
                 id: product._id,
                 name: product.name,
-                price: `$${product.price}`,
+                category: product.category,
+                price: `₱${product.price}.00`,
                 stock: product.stock,
                 actions: <Fragment>
                     <Link to={`/admin/product/${product._id}`} className="btn btn-primary py-1 px-2">

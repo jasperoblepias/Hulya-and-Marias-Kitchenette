@@ -164,7 +164,7 @@ const UpdateProduct = ({ match, history }) => {
 
                                     </select>
                                 </div>
-                                {/* <div className="form-group">
+                                <div className="form-group">
                                     <label htmlFor="stock_field">Stock</label>
                                     <input
                                         type="number"
@@ -175,7 +175,7 @@ const UpdateProduct = ({ match, history }) => {
                                     />
                                 </div>
 
-                                <div className="form-group">
+                                {/* <div className="form-group">
                                     <label htmlFor="seller_field">Seller Name</label>
                                     <input
                                         type="text"

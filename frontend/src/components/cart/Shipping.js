@@ -4,7 +4,7 @@ import CheckoutSteps from './CheckoutSteps'
 import { useDispatch, useSelector } from 'react-redux'
 import { saveShippingInfo } from '../../actions/cartActions'
 //testing lines for phone number
-import parsePhoneNumber from 'libphonenumber-js'
+// import parsePhoneNumber from 'libphonenumber-js'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 

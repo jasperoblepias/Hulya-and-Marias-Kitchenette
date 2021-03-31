@@ -15,18 +15,18 @@ const NewProduct = ({ history }) => {
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [stock, setStock] = useState(0);
-    const [seller, setSeller] = useState('');
+    // const [seller, setSeller] = useState('');
     const [images, setImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([])
 
     const categories = [
-                'Pastas&Noodles',
+                'Pasta',
                 'Desserts',
                 'Seafood',
                 'Chicken',
                 'Beef',
                 'Pork',
-                'Special Orders'
+                'SpecialOrders'
     ]
 
     const alert = useAlert();
@@ -58,7 +58,7 @@ const NewProduct = ({ history }) => {
         formData.set('description', description);
         formData.set('category', category);
         formData.set('stock', stock);
-        formData.set('seller', seller);
+        // formData.set('seller', seller);
 
         images.forEach(image => {
             formData.append('images', image)
@@ -149,7 +149,7 @@ const NewProduct = ({ history }) => {
                                         onChange={(e) => setStock(e.target.value)}
                                     />
                                 </div>
-
+{/* 
                                 <div className="form-group">
                                     <label htmlFor="seller_field">Name</label>
                                     <input
@@ -159,7 +159,7 @@ const NewProduct = ({ history }) => {
                                         value={seller}
                                         onChange={(e) => setSeller(e.target.value)}
                                     />
-                                </div>
+                                </div> */}
 
                                 <div className='form-group'>
                                     <label>Images</label>
