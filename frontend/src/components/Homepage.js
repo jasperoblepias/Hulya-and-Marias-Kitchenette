@@ -4,6 +4,8 @@ import { Fragment, useState } from 'react'
 import MetaData from '../components/layout/MetaData'
 import Loader from './layout/Loader'
 import featured1 from '../components/pictures/featured1.png'
+import featured2 from '../components/pictures/featured2.png'
+import featured3 from '../components/pictures/featured3.png'
 import aboutUS from '../components/pictures/aboutUS.png'
 import contactUs from '../components/pictures/contactUs.png'
 import menu from '../components/pictures/menu.png'
@@ -37,20 +39,20 @@ const Homepage = () => {
                         <div class="col-md-8 marginbot">
 
                             <div class="row">
-                                <div class="col-md-4 center">
-                                    <h1>Menu</h1>
-                                    <a href="/"><img class="img-rounded" alt="Bootstrap Thumbnail First"
+                                <div class="col-md-4 text-center">
+                                    <h1 class="text-center">Menu</h1>
+                                    <a href="/menu/pasta"><img class="rounded" alt="Bootstrap Thumbnail First"
                                         src={menu} ></img></a>
                                 </div>
-                                <div class="col-md-4">
-                                    <h1>About us</h1>
-                                    <a href="/aboutus"><img class="img-rounded" alt="Bootstrap Thumbnail Second"
+                                <div class="col-md-4 text-center">
+                                    <h1 class="text-center">About us</h1>
+                                    <a href="/aboutus"><img class="rounded" alt="Bootstrap Thumbnail Second"
                                         src={aboutUS}></img></a>
                                 </div>
 
-                                <div class="col-md-4">
-                                    <h1 class="">Contact us</h1>
-                                    <a href="/contactus"><img class="img-rounded" alt="Bootstrap Thumbnail Third"
+                                <div class="col-md-4 text-center">
+                                    <h1 class="text-center">Contact us</h1>
+                                    <a href="/contactus"><img class="rounded" alt="Bootstrap Thumbnail Third"
                                         src={contactUs}></img></a>
                                 </div>
                             </div>
@@ -81,14 +83,14 @@ const Homepage = () => {
                                     </div>
                                     <div class="carousel-item">
                                         <img class="d-block w-100" alt="Carousel Bootstrap Second"
-                                            src={featured1}></img>
+                                            src={featured2}></img>
 
                                     </div>
                                     <div class="carousel-item active">
                                         <img class="d-block w-100" alt="Carousel Bootstrap Third"
-                                            src={featured1}></img>
-
+                                            src={featured3}></img>
                                     </div>
+
                                 </div> <a class="carousel-control-prev" href="#carousel-635448" data-slide="prev"><span
                                     class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a
                                         class="carousel-control-next" href="#carousel-635448" data-slide="next"><span

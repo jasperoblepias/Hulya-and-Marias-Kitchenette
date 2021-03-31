@@ -1,12 +1,12 @@
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { createOrder, clearErrors  } from '../../actions/orderActions'
+import { createOrder, clearErrors } from '../../actions/orderActions'
 import MetaData from '../layout/MetaData'
 import CheckoutSteps from './CheckoutSteps'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
-import{saveShippingInfo} from '../../actions/cartActions'
-import { Button,Modal} from 'react-bootstrap';
+import { saveShippingInfo } from '../../actions/cartActions'
+import { Button, Modal } from 'react-bootstrap';
 
 
 const ConfirmOrder = ({ history }) => {
@@ -36,8 +36,8 @@ const ConfirmOrder = ({ history }) => {
 
 
         dispatch(createOrder(order))
-
         history.push('/success')
+        localStorage.clear();
     }
 
     return (
@@ -111,32 +111,32 @@ const ConfirmOrder = ({ history }) => {
 
 
             <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-    >
-        <Modal.Header closeButton>
-        <Modal.Title>Confirmation Of Order</Modal.Title>
-        </Modal.Header>
-        <Modal.Body classname = "text-center">
-        This is message is to confirm your order. Once you click the understood button your order will be processed. <br/>
+                show={show}
+                onHide={handleClose}
+                backdrop="static"
+                keyboard={false}
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title>Confirmation Of Order</Modal.Title>
+                </Modal.Header>
+                <Modal.Body classname="text-center">
+                    This is message is to confirm your order. Once you click the understood button your order will be processed. <br />
         *this message will not close unless you click on Cancel or Understood*
         </Modal.Body>
-        <Modal.Footer >
-        <Button variant="secondary"  onClick={handleClose}>
-            Cancel
+                <Modal.Footer >
+                    <Button variant="secondary" onClick={handleClose}>
+                        Cancel
         </Button>
 
-        <Button
+                    <Button
 
-        variant="primary" type = 'submit' onClick={submitHandler}>Understood
+                        variant="primary" type='submit' onClick={submitHandler}>Understood
 
 
         </Button>
 
-        </Modal.Footer>
-    </Modal>
+                </Modal.Footer>
+            </Modal>
         </Fragment>
 
     )
