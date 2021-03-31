@@ -83,7 +83,7 @@ var cities = require('philippines/cities');
                                 required
                             >
                                 <option> - </option>
-                                
+
                                 {cities.map(city => {
                                         if(city.province == 'MM') {
                                             return <option key={city.name} value={city.name}>{city.name}</option>
@@ -142,7 +142,7 @@ var cities = require('philippines/cities');
                             />
                         </div>
 
-                        
+
                         <div className="form-group">
                             <label htmlFor="phone_field">Phone No</label>
                         <PhoneInput
