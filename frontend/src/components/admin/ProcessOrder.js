@@ -49,7 +49,7 @@ const ProcessOrder = ({ match }) => {
     }
 
     const shippingDetails = shippingInfo && `${shippingInfo.address},${shippingInfo.barangay}, ${shippingInfo.city},  ${shippingInfo.postalCode}`
-    const isPaid = paymentInfo && paymentInfo.status === 'succeeded' ? true : false
+    // const isPaid = paymentInfo && paymentInfo.status === 'succeeded' ? true : false
 
     return (
         <Fragment>
@@ -80,9 +80,9 @@ const ProcessOrder = ({ match }) => {
 
                                     {/* <h4 className="my-4">Stripe ID</h4>
                                     <p><b>{paymentInfo && paymentInfo.id}</b></p> */}
-{/*
+
                                     <h4 className="my-4">Order Status:</h4>
-                                    <p className={order.orderStatus && String(order.orderStatus).includes('Delivered') ? "greenColor" : "redColor"} ><b>{orderStatus}</b></p> */}
+                                    <p className={order.orderStatus && String(order.orderStatus).includes('Delivered') ? "greenColor" : "redColor"} ><b>{orderStatus}</b></p>
 
 
 
@@ -125,7 +125,7 @@ const ProcessOrder = ({ match }) => {
                                             onChange={(e) => setStatus(e.target.value)}
                                         >
                                             <option value="Processing">Processing</option>
-                                            <option value="Shipped">Shipped</option>
+                                            <option value="Cancelled">Cancelled</option>
                                             <option value="Delivered">Delivered</option>
                                         </select>
                                     </div>

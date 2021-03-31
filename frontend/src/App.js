@@ -77,8 +77,6 @@ function App() {
 
         <div className="container container-fluid">
           
-          {/* <Route path="/" component={Home} exact /> */}
-          
           <Route path="/search/:keyword" component={Home} />
           <Route path="/product/:id" component={ProductDetails} exact />
 
@@ -118,7 +116,7 @@ function App() {
         <ProtectedRoute path="/admin/order/:id" isAdmin={true} component={ProcessOrder} exact />
         <ProtectedRoute path="/admin/users" isAdmin={true} component={UsersList} exact />
         <ProtectedRoute path="/admin/user/:id" isAdmin={true} component={UpdateUser} exact />
-        <ProtectedRoute path="/admin/reviews" isAdmin={true} component={ProductReviews} exact />
+        {/* <ProtectedRoute path="/admin/reviews" isAdmin={true} component={ProductReviews} exact /> */}
 
         {!loading && (!isAuthenticated || user.role !== 'admin') && (
           <Footer />

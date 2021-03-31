@@ -19,6 +19,7 @@ const OrdersList = ({ history }) => {
     const { loading, error, orders } = useSelector(state => state.allOrders);
     const { isDeleted } = useSelector(state => state.order)
 
+
     useEffect(() => {
         dispatch(allOrders());
 
@@ -48,6 +49,11 @@ const OrdersList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
+                    label: 'Customer Name',
+                    field: 'customerName',
+                    sort: 'asc'
+                },
+                {
                     label: 'No of Items',
                     field: 'numofItems',
                     sort: 'asc'
@@ -73,6 +79,7 @@ const OrdersList = ({ history }) => {
         orders.forEach(order => {
             data.rows.push({
                 id: order._id,
+                customerName: order.shippingInfo.name,
                 numofItems: order.orderItems.length,
                 amount: `₱${order.itemsPrice}`,
                 status: order.orderStatus && String(order.orderStatus).includes('Delivered')

@@ -15,6 +15,7 @@ const OrderSuccess = () => {
                     <h2>Your Order has been placed successfully.</h2>
 
                     <h2>Kindly check up on your email for the processing of your order.</h2>
+                    <Link to='/' > Go to Home</Link>
                 </div>
 
             </div>

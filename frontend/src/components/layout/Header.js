@@ -71,7 +71,7 @@ const Header1 = () => {
                     <ul class="navbar-nav ml-md-auto">
                         
                         <li class="nav-item active">
-                            <a class="nav-link" href="/cart">Cart<span id="cart_count">  {cartItems.length}</span></a>
+                            <a class="nav-link" href="/cart"><i className="fa fa-shopping-cart"></i>Cart<span id="cart_count">  {cartItems.length}</span></a>
                         </li>
         
                         <li class="nav-item dropdown ">
