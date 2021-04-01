@@ -54,6 +54,11 @@ const OrdersList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
+                    label: 'Customer Email',
+                    field: 'customerEmail',
+                    sort: 'asc'
+                },
+                {
                     label: 'No of Items',
                     field: 'numofItems',
                     sort: 'asc'
@@ -80,6 +85,7 @@ const OrdersList = ({ history }) => {
             data.rows.push({
                 id: order._id,
                 customerName: order.shippingInfo.name,
+                customerEmail: order.shippingInfo.email,
                 numofItems: order.orderItems.length,
                 amount: `₱${order.itemsPrice}`,
                 status: order.orderStatus && String(order.orderStatus).includes('Delivered')

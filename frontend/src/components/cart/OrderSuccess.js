@@ -9,13 +9,13 @@ const OrderSuccess = () => {
             <MetaData title={'Order Success'} />
 
             <div className="row justify-content-center">
-                <div className="col-6 mt-5 text-center">
+                <div className="col-12 mt-5 text-center">
                     <img className="my-5 img-fluid d-block mx-auto" src="/images/order_success.png" alt="Order Success" width="200" height="200" />
 
                     <h2>Your Order has been placed successfully.</h2>
-
-                    <h2>Kindly check up on your email for the processing of your order.</h2>
-
+                    <br></br>
+                    <h2>Wait for an email for confimrmation of your reservation</h2>
+                    <br></br>
                     <Link to='/' > Go to Home</Link>
                 </div>
 

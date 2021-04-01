@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: 'Amazon Ember';
+  font-family: 'arvo';
   width: 100%;
   height: 100%;
   margin: 0px;
@@ -208,8 +208,8 @@ footer {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #fa9c23;
-  border-color: #fa9c23 transparent;
+  border: 6px solid #610222;
+  border-color: #610222 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -634,9 +634,12 @@ ul.CTAs a {
 
 .title{
   margin-top: 150px;
-  vertical-align: center;
+  text-align: center;
+  /* vertical-align: center; */
   color: #e3e3e3;
   font-size: 70px;
+  text-shadow: 2px 4px #610222;
+
 }
 
 h1{
@@ -748,7 +751,6 @@ p#InstagramTxt{
   margin-left: auto;
   margin-right: auto;
   font-size: 50px;
-  text-align: center;
 }
 
 .para {
@@ -762,5 +764,14 @@ p#InstagramTxt{
   text-align: justify;
 }
 
+.email{
+  font-weight: bold;
+}
 
+li{
+  font-size: larger;
+}
 
+.confirmpara{
+  font-size: 21px;
+}

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 
-import Home from './components/Home'
+// import Home from './components/Home'
 import ProductDetails from './components/product/ProductDetails'
 
 // Cart Imports
@@ -36,14 +36,14 @@ import OrdersList from './components/admin/OrdersList'
 import ProcessOrder from './components/admin/ProcessOrder'
 import UsersList from './components/admin/UsersList'
 import UpdateUser from './components/admin/UpdateUser'
-import ProductReviews from './components/admin/ProductReviews'
+// import ProductReviews from './components/admin/ProductReviews'
 
 
 import ProtectedRoute from './components/route/ProtectedRoute'
 import { loadUser } from './actions/userActions'
 import { useSelector } from 'react-redux'
 import store from './store'
-import axios from 'axios'
+// import axios from 'axios'
 
 import Homepage from './components/Homepage'
 import Pasta from './components/menu/Pasta'
@@ -77,7 +77,7 @@ function App() {
 
         <div className="container container-fluid">
           
-          <Route path="/search/:keyword" component={Home} />
+          <Route path="/search/:keyword" component={Homepage} />
           <Route path="/product/:id" component={ProductDetails} exact />
 
           <Route path="/contactus" component={Contactus} exact />

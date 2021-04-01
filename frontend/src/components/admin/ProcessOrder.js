@@ -72,7 +72,7 @@ const ProcessOrder = ({ match }) => {
                                     <p><b>Phone:</b> {shippingInfo && shippingInfo.phoneNo}</p>
                                     <p className="mb-4"><b>Address:</b>{shippingDetails}</p>
                                     <p><b>Email:</b> {shippingInfo && shippingInfo.email}</p>
-                                    <p><b>Amount:</b> ${order && order.itemsPrice}</p>
+                                    <p><b>Amount:</b> ₱{order && order.itemsPrice}.00</p>
 
                                     <hr />
 
@@ -103,7 +103,7 @@ const ProcessOrder = ({ match }) => {
 
 
                                                 <div className="col-4 col-lg-2 mt-4 mt-lg-0">
-                                                    <p>${item.price}</p>
+                                                    <p>₱{item.price}.00</p>
                                                 </div>
 
                                                 <div className="col-4 col-lg-3 mt-4 mt-lg-0">

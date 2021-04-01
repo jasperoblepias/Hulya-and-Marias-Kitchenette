@@ -19,112 +19,116 @@ import { clearErrors } from '../actions/userActions'
 
 const Homepage = ({ history, location }) => {
 
-const alert = useAlert();
-const dispatch = useDispatch();
+    const alert = useAlert();
+    const dispatch = useDispatch();
 
-const { isAuthenticated, error, loading } = useSelector(state => state.auth);
+    const { isAuthenticated, error, loading } = useSelector(state => state.auth);
 
-const redirect = location.search ? location.search.split('=')[1] : '/dashboard'
+    const redirect = location.search ? location.search.split('=')[1] : '/dashboard'
 
-useEffect(() => {
+    useEffect(() => {
 
-    if (isAuthenticated) {
-        history.push(redirect)
-    }
+        if (isAuthenticated) {
+            history.push(redirect)
+        }
 
-    if (error) {
-        alert.error(error);
-        dispatch(clearErrors());
-    }
+        if (error) {
+            alert.error(error);
+            dispatch(clearErrors());
+        }
 
-}, [dispatch, alert, isAuthenticated, error, history])
+    }, [dispatch, alert, isAuthenticated, error, history])
 
     return (
-            <Fragment>
-                <MetaData title='Home' />
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12 background">
-                            <div class="row">
-                                <div class="col-md-2">
-                                </div>
-                                <div class="col-md-8">
-                                    <h1 class="title">
-                                        Welcome to Hulya & Maria’s
+        <Fragment>
+            {loading ? <Loader /> : (
+                <Fragment>
+                    <MetaData title='Home' />
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 background">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h1 class="title">
+                                            Welcome to Hulya & Maria’s
 						</h1>
+                                    </div>
+                                    <div class="col-md-2">
+                                    </div>
                                 </div>
-                                <div class="col-md-2">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                            </div>
+                            <div class="col-md-10 marginbot">
+
+                                <div class="row">
+                                    <div class="col-md-4 text-center">
+                                        <h1 class="text-center">Menu</h1>
+                                        <a href="/menu/pasta"><img class="rounded" alt="Bootstrap Thumbnail First"
+                                            src={menu} ></img></a>
+                                    </div>
+                                    <div class="col-md-4 text-center">
+                                        <h1 class="text-center">About us</h1>
+                                        <a href="/aboutus"><img class="rounded" alt="Bootstrap Thumbnail Second"
+                                            src={aboutUS}></img></a>
+                                    </div>
+
+                                    <div class="col-md-4 text-center">
+                                        <h1 class="text-center">Contact us</h1>
+                                        <a href="/contactus"><img class="rounded" alt="Bootstrap Thumbnail Third"
+                                            src={contactUs}></img></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                            </div>
+                        </div>
+                        <div class="row" >
+                            <div class="col-md-12 padding">
+                                <div class="carousel slide" id="carousel-635448">
+                                    <ol class="carousel-indicators">
+                                        <li data-slide-to="0" data-target="#carousel-635448">
+                                        </li>
+                                        <li data-slide-to="1" data-target="#carousel-635448">
+                                        </li>
+                                        <li data-slide-to="2" data-target="#carousel-635448" class="active">
+                                        </li>
+                                    </ol>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" alt="Carousel Bootstrap First"
+                                                src={featured1}></img>
+
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" alt="Carousel Bootstrap Second"
+                                                src={featured2}></img>
+
+                                        </div>
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-100" alt="Carousel Bootstrap Third"
+                                                src={featured3}></img>
+                                        </div>
+
+                                    </div> <a class="carousel-control-prev" href="#carousel-635448" data-slide="prev"><span
+                                        class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a
+                                            class="carousel-control-next" href="#carousel-635448" data-slide="next"><span
+                                                class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-2">
-                        </div>
-                        <div class="col-md-8 marginbot">
-
-                            <div class="row">
-                                <div class="col-md-4 text-center">
-                                    <h1 class="text-center">Menu</h1>
-                                    <a href="/menu/pasta"><img class="rounded" alt="Bootstrap Thumbnail First"
-                                        src={menu} ></img></a>
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <h1 class="text-center">About us</h1>
-                                    <a href="/aboutus"><img class="rounded" alt="Bootstrap Thumbnail Second"
-                                        src={aboutUS}></img></a>
-                                </div>
-
-                                <div class="col-md-4 text-center">
-                                    <h1 class="text-center">Contact us</h1>
-                                    <a href="/contactus"><img class="rounded" alt="Bootstrap Thumbnail Third"
-                                        src={contactUs}></img></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                        </div>
-                    </div>
-                    <div class="row" >
-                        <div class="col-md-12 padding">
-                            <div class="carousel slide" id="carousel-635448">
-                                <ol class="carousel-indicators">
-                                    <li data-slide-to="0" data-target="#carousel-635448">
-                                    </li>
-                                    <li data-slide-to="1" data-target="#carousel-635448">
-                                    </li>
-                                    <li data-slide-to="2" data-target="#carousel-635448" class="active">
-                                    </li>
-                                </ol>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" alt="Carousel Bootstrap First"
-                                            src={featured1}></img>
-
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" alt="Carousel Bootstrap Second"
-                                            src={featured2}></img>
-
-                                    </div>
-                                    <div class="carousel-item active">
-                                        <img class="d-block w-100" alt="Carousel Bootstrap Third"
-                                            src={featured3}></img>
-                                    </div>
-
-                                </div> <a class="carousel-control-prev" href="#carousel-635448" data-slide="prev"><span
-                                    class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a
-                                        class="carousel-control-next" href="#carousel-635448" data-slide="next"><span
-                                            class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </Fragment>
+                </Fragment>
+            )}
+        </Fragment>
     )
 }
 
