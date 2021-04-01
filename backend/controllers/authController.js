@@ -79,7 +79,15 @@ exports.forgotPassword = catchAsyncErrors(async(req, res, next) => {
     // palitan nalang resetUrl pag nakadeploy na
     const resetUrl = `localhost:3000/password/reset/${resetToken}`;
 
-    const message = `Your password reset token is:\n\n${resetUrl}\n\nPlease disregard if you have not requested this email.`
+    //const message = `Your password reset token is:\n\n${resetUrl}\n\nPlease disregard if you have not requested this email.`
+    const message = `
+                    <center>
+                    <img src= https://res.cloudinary.com/djccz4qpk/image/upload/v1617281661/ham_logo_u7boxc.png>
+                    <p>Your password reset token is:</p>
+                    <br>${resetUrl}
+                    <br>
+                    <p>Please disregard if you have not requested this email.</p>
+                    </center>`
 
     try {
 

@@ -3,17 +3,19 @@ const Product = require('../models/product');
 
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
+const sendEmailCustomer = require('../utils/sendEmailcustomer');
 
 // Create a new order   =>  /api/v1/order/new
-exports.newOrder = catchAsyncErrors(async (req, res, next) => {
+exports.newOrder = catchAsyncErrors(async(req, res, next) => {
+
+
+
     const {
         orderItems,
         shippingInfo,
         itemsPrice,
-        taxPrice,
         shippingPrice,
         totalPrice,
-        paymentInfo
 
     } = req.body;
 
@@ -21,12 +23,29 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
         orderItems,
         shippingInfo,
         itemsPrice,
-        taxPrice,
         shippingPrice,
         totalPrice,
-        paymentInfo,
-        paidAt: Date.now(),
-        // user: req.user._id
+    })
+
+    const message = `
+                    <center>
+                    <img src= https://res.cloudinary.com/djccz4qpk/image/upload/v1617281661/ham_logo_u7boxc.png>
+                    <br>
+                    <p><i>This is a system generated message. Please DO NOT REPLY to this email.</i></p>
+                    <br>
+                    <p>Good Day, ${shippingInfo.name}!</p>
+                    <br>
+                    <p>Your order has been added to the reservation list!</p>
+                    <p>Wait patiently for an email from Hulya & Maria's Kitchenette (hulyaandmarias@gmail.com) for your order confirmation.</p>
+                    <p>If you have any concern/s, please email us on hulyaandmarias@gmail.com</p>
+                    <br>
+                    <p>Thank you and Godbless!</p>
+                    </center>`
+
+    await sendEmailCustomer({
+        email: shippingInfo.email,
+        subject: "Hulya and Maria's Kitchenette: Order Confirmation",
+        message
     })
 
     res.status(200).json({
@@ -37,7 +56,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
 
 
 // Get single order   =>   /api/v1/order/:id
-exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
+exports.getSingleOrder = catchAsyncErrors(async(req, res, next) => {
     const order = await Order.findById(req.params.id).populate('user', 'name email')
 
     if (!order) {
@@ -51,7 +70,7 @@ exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
 })
 
 // Get logged in user orders   =>   /api/v1/orders/me
-exports.myOrders = catchAsyncErrors(async (req, res, next) => {
+exports.myOrders = catchAsyncErrors(async(req, res, next) => {
     // const orders = await Order.find({ user: req.user.id })
 
     res.status(200).json({
@@ -62,7 +81,7 @@ exports.myOrders = catchAsyncErrors(async (req, res, next) => {
 
 
 // Get all orders - ADMIN  =>   /api/v1/admin/orders/
-exports.allOrders = catchAsyncErrors(async (req, res, next) => {
+exports.allOrders = catchAsyncErrors(async(req, res, next) => {
     const orders = await Order.find()
 
     let totalAmount = 0;
@@ -79,7 +98,7 @@ exports.allOrders = catchAsyncErrors(async (req, res, next) => {
 })
 
 // Update / Process order - ADMIN  =>   /api/v1/admin/order/:id
-exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
+exports.updateOrder = catchAsyncErrors(async(req, res, next) => {
     const order = await Order.findById(req.params.id)
 
     if (order.orderStatus === 'Delivered') {
@@ -109,7 +128,7 @@ async function updateStock(id, quantity) {
 }
 
 // Delete order   =>   /api/v1/admin/order/:id
-exports.deleteOrder = catchAsyncErrors(async (req, res, next) => {
+exports.deleteOrder = catchAsyncErrors(async(req, res, next) => {
     const order = await Order.findById(req.params.id)
 
     if (!order) {
