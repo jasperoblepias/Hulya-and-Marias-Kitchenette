@@ -74,7 +74,9 @@ exports.forgotPassword = catchAsyncErrors(async(req, res, next) => {
     await user.save({ validateBeforeSave: false });
 
     // Create reset password url
-    const resetUrl = `${req.protocol}://${req.get('host')}/password/reset/${resetToken}`;
+    // const resetUrl = `${req.protocol}://${req.get('host')}/password/reset/${resetToken}`;
+    // palitan nalang resetUrl pag nakadeploy na
+    const resetUrl = `localhost:3000/password/reset/${resetToken}`;
 
     const message = `Your password reset token is:\n\n${resetUrl}\n\nPlease disregard if you have not requested this email.`
 
