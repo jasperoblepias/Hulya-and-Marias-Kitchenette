@@ -20,6 +20,7 @@ const NewProduct = ({ history }) => {
     const [imagesPreview, setImagesPreview] = useState([])
 
     const categories = [
+                'Select Category',
                 'Pasta',
                 'Desserts',
                 'Seafood',
