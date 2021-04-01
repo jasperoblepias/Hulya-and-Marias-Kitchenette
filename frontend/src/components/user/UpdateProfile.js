@@ -11,8 +11,8 @@ const UpdateProfile = ({ history }) => {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [avatar, setAvatar] = useState('')
-    const [avatarPreview, setAvatarPreview] = useState('/images/default_avatar.jpg')
+    // const [avatar, setAvatar] = useState('')
+    // const [avatarPreview, setAvatarPreview] = useState('/images/default_avatar.jpg')
 
     const alert = useAlert();
     const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const UpdateProfile = ({ history }) => {
         if (user) {
             setName(user.name);
             setEmail(user.email);
-            setAvatarPreview(user.avatar.url)
+            // setAvatarPreview(user.avatar.url)
         }
 
         if (error) {
@@ -52,22 +52,22 @@ const UpdateProfile = ({ history }) => {
         const formData = new FormData();
         formData.set('name', name);
         formData.set('email', email);
-        formData.set('avatar', avatar);
+        // formData.set('avatar', avatar);
 
         dispatch(updateProfile(formData))
     }
 
     const onChange = e => {
-        const reader = new FileReader();
+        // const reader = new FileReader();
 
-        reader.onload = () => {
-            if (reader.readyState === 2) {
-                setAvatarPreview(reader.result)
-                setAvatar(reader.result)
-            }
-        }
+        // reader.onload = () => {
+        //     if (reader.readyState === 2) {
+        //         setAvatarPreview(reader.result)
+        //         setAvatar(reader.result)
+        //     }
+        // }
 
-        reader.readAsDataURL(e.target.files[0])
+        // reader.readAsDataURL(e.target.files[0])
 
     }
     return (
@@ -102,7 +102,7 @@ const UpdateProfile = ({ history }) => {
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
-
+{/* 
                         <div className='form-group'>
                             <label htmlFor='avatar_upload'>Avatar</label>
                             <div className='d-flex align-items-center'>
@@ -129,7 +129,7 @@ const UpdateProfile = ({ history }) => {
                                 </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                         <button type="submit" className="btn update-btn btn-block mt-4 mb-3" disabled={loading ? true : false} >Update</button>
                     </form>

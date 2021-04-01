@@ -16,8 +16,8 @@ const Register = ({ history }) => {
 
     const { name, email, password } = user;
 
-    const [avatar, setAvatar] = useState('')
-    const [avatarPreview, setAvatarPreview] = useState('/images/default_avatar.jpg')
+    // const [avatar, setAvatar] = useState('')
+    // const [avatarPreview, setAvatarPreview] = useState('/images/default_avatar.jpg')
 
     const alert = useAlert();
     const dispatch = useDispatch();
@@ -44,28 +44,28 @@ const Register = ({ history }) => {
         formData.set('name', name);
         formData.set('email', email);
         formData.set('password', password);
-        formData.set('avatar', avatar);
+        // formData.set('avatar', avatar);
 
         dispatch(register(formData))
     }
 
     const onChange = e => {
-        if (e.target.name === 'avatar') {
+        // if (e.target.name === 'avatar') {
 
-            const reader = new FileReader();
+        //     const reader = new FileReader();
 
-            reader.onload = () => {
-                if (reader.readyState === 2) {
-                    setAvatarPreview(reader.result)
-                    setAvatar(reader.result)
-                }
-            }
+        //     reader.onload = () => {
+        //         if (reader.readyState === 2) {
+        //             setAvatarPreview(reader.result)
+        //             setAvatar(reader.result)
+        //         }
+        //     }
 
-            reader.readAsDataURL(e.target.files[0])
+        //     reader.readAsDataURL(e.target.files[0])
 
-        } else {
+        // } else {
             setUser({ ...user, [e.target.name]: e.target.value })
-        }
+        // }
     }
 
     return (
@@ -114,7 +114,7 @@ const Register = ({ history }) => {
                             />
                         </div>
 
-                        <div className='form-group'>
+                        {/* <div className='form-group'>
                             <label htmlFor='avatar_upload'>Avatar</label>
                             <div className='d-flex align-items-center'>
                                 <div>
@@ -140,7 +140,7 @@ const Register = ({ history }) => {
                                     </label>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                         <button
                             id="register_button"

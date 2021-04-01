@@ -11,22 +11,23 @@ const cloudinary = require('cloudinary');
 // Register a user   => /api/v1/register
 exports.registerUser = catchAsyncErrors(async(req, res, next) => {
 
-    const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
-        folder: 'avatars',
-        width: 150,
-        crop: "scale"
-    })
+    // const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
+    //     folder: 'avatars',
+    //     width: 150,
+    //     crop: "scale"
+    // })
 
     const { name, email, password } = req.body;
 
     const user = await User.create({
         name,
         email,
-        password,
-        avatar: {
-            public_id: result.public_id,
-            url: result.secure_url
-        }
+        password
+        // ,
+        // avatar: {
+        //     public_id: result.public_id,
+        //     url: result.secure_url
+        // }
     })
 
     sendToken(user, 200, res)
@@ -173,23 +174,23 @@ exports.updateProfile = catchAsyncErrors(async(req, res, next) => {
     }
 
     // Update avatar
-    if (req.body.avatar !== '') {
-        const user = await User.findById(req.user.id)
+    // if (req.body.avatar !== '') {
+    //     const user = await User.findById(req.user.id)
 
-        const image_id = user.avatar.public_id;
-        const res = await cloudinary.v2.uploader.destroy(image_id);
+    //     const image_id = user.avatar.public_id;
+    //     const res = await cloudinary.v2.uploader.destroy(image_id);
 
-        const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
-            folder: 'avatars',
-            width: 150,
-            crop: "scale"
-        })
+    //     const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
+    //         folder: 'avatars',
+    //         width: 150,
+    //         crop: "scale"
+    //     })
 
-        newUserData.avatar = {
-            public_id: result.public_id,
-            url: result.secure_url
-        }
-    }
+    //     newUserData.avatar = {
+    //         public_id: result.public_id,
+    //         url: result.secure_url
+    //     }
+    // }
 
     const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
         new: true,
