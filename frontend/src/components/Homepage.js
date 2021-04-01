@@ -1,5 +1,5 @@
 import React from 'react'
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect } from 'react'
 
 import MetaData from '../components/layout/MetaData'
 import Loader from './layout/Loader'
@@ -13,7 +13,32 @@ import menu from '../components/pictures/menu.png'
 import '../App.css'
 
 
-const Homepage = () => {
+import { useAlert } from 'react-alert'
+import { useDispatch, useSelector } from 'react-redux'
+import { clearErrors } from '../actions/userActions'
+
+const Homepage = ({ history, location }) => {
+
+const alert = useAlert();
+const dispatch = useDispatch();
+
+const { isAuthenticated, error, loading } = useSelector(state => state.auth);
+
+const redirect = location.search ? location.search.split('=')[1] : '/dashboard'
+
+useEffect(() => {
+
+    if (isAuthenticated) {
+        history.push(redirect)
+    }
+
+    if (error) {
+        alert.error(error);
+        dispatch(clearErrors());
+    }
+
+}, [dispatch, alert, isAuthenticated, error, history])
+
     return (
             <Fragment>
                 <MetaData title='Home' />

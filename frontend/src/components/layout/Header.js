@@ -74,12 +74,12 @@ const Header1 = () => {
                             <a class="nav-link" href="/cart"><i className="fa fa-shopping-cart"></i>Cart<span id="cart_count">  {cartItems.length}</span></a>
                         </li>
         
-                        <li class="nav-item dropdown ">
+                        {/* <li class="nav-item dropdown ">
                             
                             <a type="button" class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" 
                             aria-haspopup="true" aria-expanded="false" >{user && user.name}</a>
                             
-                            {/* <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                                 
                                 {user && user.role === 'admin' && (
                                     <a class="dropdown-item" href="/Dashboard">Dashboard</a> 
@@ -89,8 +89,8 @@ const Header1 = () => {
                                     <a class="dropdown-item" href="#" onClick={logoutHandler}>Logout</a> 
 
                                 
-                            </div> */}
-                        </li>
+                            </div>
+                        </li> */}
 
                     </ul>
 
