@@ -81,7 +81,7 @@ nav {
 }
 
 .card-title a:hover {
-  color: #fa9c23;
+  color: #610222;
   text-decoration: none;
 }
 
@@ -774,4 +774,8 @@ li{
 
 .confirmpara{
   font-size: 21px;
+}
+
+a{
+  color:#000000;
 }
