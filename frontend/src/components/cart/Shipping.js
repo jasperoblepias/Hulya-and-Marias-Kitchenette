@@ -26,7 +26,7 @@ var cities = require('philippines/cities');
     const today = new Date()
     const dd = String(today.getDate()).padStart(2, '0')
     const mm = String(today.getMonth() + 1).padStart(2, '0')
-    const yyyy = today.getFullYear() 
+    const yyyy = today.getFullYear()
     const hrs = String(today.getHours()).padStart(2,'0')
     const minutes = String(today.getMinutes()).padStart(2,'0')
     const todayDate = mm + '/' + dd + '/' + yyyy
@@ -154,14 +154,14 @@ var cities = require('philippines/cities');
 
                         <div className="form-group">
                             <label htmlFor="phone_field">Phone No</label>
-                        <PhoneInput
+                        <PhoneInput defaultCountry="PH"
                             placeholder="Enter phone number"
                             value={phoneNo}
                             onChange ={setPhoneNo}
                             required
                             />
                         </div>
-                                    
+
 
                         <button
                             id="shipping_btn"
