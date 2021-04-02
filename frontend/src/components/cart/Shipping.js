@@ -23,6 +23,15 @@ var cities = require('philippines/cities');
 
 //testing sa phone number
 
+    const today = new Date()
+    const dd = String(today.getDate()).padStart(2, '0')
+    const mm = String(today.getMonth() + 1).padStart(2, '0')
+    const yyyy = today.getFullYear() 
+    const hrs = String(today.getHours()).padStart(2,'0')
+    const minutes = String(today.getMinutes()).padStart(2,'0')
+    const todayDate = mm + '/' + dd + '/' + yyyy
+    const todayTime = hrs +':'+ minutes
+
 
     const { shippingInfo } = useSelector(state => state.cart)
 
@@ -31,7 +40,7 @@ var cities = require('philippines/cities');
     const [postalCode, setPostalCode] = useState(shippingInfo.postalCode)
     const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo)
 
-    const [date, setDate] = useState(shippingInfo.date)
+    const [date] = useState( todayDate + ' ' + todayTime)
     const [name, setName] = useState(shippingInfo.name)
 
     const [barangay, setBarangay] = useState(shippingInfo.barangay)
@@ -152,7 +161,7 @@ var cities = require('philippines/cities');
                             required
                             />
                         </div>
-
+                                    
 
                         <button
                             id="shipping_btn"
@@ -162,6 +171,7 @@ var cities = require('philippines/cities');
                             CONTINUE
                             </button>
                     </form>
+
                 </div>
             </div>
 
