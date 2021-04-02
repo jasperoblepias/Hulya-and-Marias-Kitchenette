@@ -57,6 +57,7 @@ const ConfirmOrder = ({ history }) => {
                     <p><b>Email:</b> {shippingInfo.email}</p>
                     <p><b>Region:</b> NCR </p>
                     <p className="mb-4"><b>Address:</b> {`${shippingInfo.address},${shippingInfo.barangay}, ${shippingInfo.city},  ${shippingInfo.postalCode}`}</p>
+                    <p> <b>Mode of Payment:</b> Cash on Delivery</p>
                     <p><b>Date:</b> {shippingInfo.date}</p>
                     <hr />
                     <h4 className="mt-4">Your Cart Items:</h4>

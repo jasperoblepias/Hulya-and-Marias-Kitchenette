@@ -14,7 +14,7 @@ const Chicken = ({ match }) => {
     const [currentPage] = useState(1)
     const [price] = useState([1, 5000])
     const [category] = useState('Chicken')
-    const [rating] = useState(0)
+    // const [rating] = useState(0)
 
     const alert = useAlert();
     const dispatch = useDispatch();
@@ -28,10 +28,10 @@ const Chicken = ({ match }) => {
             return alert.error(error)
         }
 
-        dispatch(getProducts(keyword, currentPage, price, category, rating));
+        dispatch(getProducts(keyword, currentPage, price, category));
 
 
-    }, [dispatch, alert, error, keyword, currentPage, price, category, rating])
+    }, [dispatch, alert, error, keyword, currentPage, price, category])
 
 
     let count = productsCount;
