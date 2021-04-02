@@ -48,6 +48,10 @@ var cities = require('philippines/cities');
     //const [region, setRegion] = useState(shippingInfo.region)
     const [email, setEmail] = useState(shippingInfo.email)
 
+
+
+
+
     const dispatch = useDispatch();
 
     const submitHandler = (e) => {
@@ -88,17 +92,19 @@ var cities = require('philippines/cities');
                                 id="country_field"
                                 className="form-control"
                                 value={city}
-                                onChange={(e) => setCity(e.target.value)}
+                                onChange={(e) => setCity(e.target.value || null)}
                                 required
                             >
-                                <option> - </option>
+                                <option value=''>- -</option>
 
                                 {cities.map(city => {
                                         if(city.province == 'MM') {
-                                            return <option key={city.name} value={city.name}>{city.name}</option>
+                                            return  <option  key={city.name} value=  {city.name}> {city.name}
+
+                                            </option>
+
                                         }
                                     })}
-
 
                             </select>
                         </div>
@@ -130,7 +136,8 @@ var cities = require('philippines/cities');
                         <div className="form-group">
                             <label htmlFor="postal_code_field">Postal Code</label>
                             <input
-                                type="number"
+                                type="integer"
+                                maxlength="4"
                                 id="postal_code_field"
                                 className="form-control"
                                 value={postalCode}
@@ -155,9 +162,13 @@ var cities = require('philippines/cities');
                         <div className="form-group">
                             <label htmlFor="phone_field">Phone No</label>
                         <PhoneInput defaultCountry="PH"
-                            placeholder="Enter phone number"
+                            type="phone"
+                            placeholder="Enter phone number e.g 09588107172"
+                            minlength="12"
+                            maxlength="13"
                             value={phoneNo}
                             onChange ={setPhoneNo}
+                            limitMaxLength = {11}
                             required
                             />
                         </div>
