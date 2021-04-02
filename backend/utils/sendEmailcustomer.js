@@ -1,5 +1,4 @@
 const nodemailer = require('nodemailer');
-const sendgridTransport = require('nodemailer-sendgrid-transport');
 
 const sendEmail = async options => {
     const transporter = nodemailer.createTransport({
