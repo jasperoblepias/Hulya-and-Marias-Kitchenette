@@ -34,20 +34,11 @@ const orderSchema = mongoose.Schema({
             type: String,
             required: true
         },
-        notes: {
-            type: String
-        },
         date: {
             type: Date,
 
         }
     },
-    /*
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'User'
-    },*/
     orderItems: [{
         name: {
             type: String,
@@ -73,11 +64,11 @@ const orderSchema = mongoose.Schema({
     }],
 
 
-        itemsPrice: {
+    itemsPrice: {
         type: Number,
         required: true,
         defaultValue: 0.0
-        },
+    },
 
 
     orderStatus: {
@@ -85,9 +76,11 @@ const orderSchema = mongoose.Schema({
         required: true,
         default: 'Processing'
     },
+    /*
     deliveredAt: {
         type: Date
     },
+    */
     createdAt: {
         type: Date,
         default: Date.now()
