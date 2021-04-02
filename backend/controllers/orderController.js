@@ -36,7 +36,7 @@ exports.newOrder = catchAsyncErrors(async(req, res, next) => {
                     <p>Good Day, ${shippingInfo.name}!</p>
                     <br>
                     <p>Your order has been added to the reservation list!</p>
-                    <p>Wait patiently for an email from Hulya & Maria's Kitchenette (hulyaandmarias@gmail.com) for your order confirmation.</p>
+                    <p>Please wait patiently for an email from Hulya & Maria's Kitchenette (hulyaandmarias@gmail.com) for your order confirmation.</p>
                     <p>If you have any concern/s, please email us on hulyaandmarias@gmail.com</p>
                     <br>
                     <p>Thank you and Godbless!</p>
