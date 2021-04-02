@@ -42,7 +42,7 @@ const Sidebar = () => {
                     </li>
 
                     <li>
-                        <Link to="/profile"><i className="fa fa-user"></i>‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎Profile</Link>
+                        <Link to="/profile"> ‎‏‏‎  ‎‏‏‎<i className="fa fa-user"></i>‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎Profile</Link>
                     </li>
 
                     {/* <li>
@@ -56,7 +56,7 @@ const Sidebar = () => {
                 </ul>
                 <ul className="list-unstyled">
                     <li onClick={logoutHandler}>
-                        <Link to="#"><i className="fa fa-sign-out" ></i>‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎Logout</Link>
+                        <Link to="#"> ‎‏‏‎  <i className="fa fa-sign-out" ></i>‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎Logout</Link>
                     </li>
                 </ul>
             </nav>

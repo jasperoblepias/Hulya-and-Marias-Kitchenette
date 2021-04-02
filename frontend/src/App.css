@@ -711,8 +711,9 @@ p#MapTxt{
 
 i{
   text-decoration:none;
-  color: black;
+  /* color: white; */
 }
+
 
 p#FacebookTxt{
   color: black;
@@ -778,4 +779,13 @@ li{
 
 a{
   color:#000000;
+}
+
+.white{
+  color: #e3e3e3;
+}
+
+.bold{
+  font-size: larger;
+  font-weight: bold;
 }

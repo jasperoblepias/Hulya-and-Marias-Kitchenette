@@ -152,6 +152,7 @@ const ProductDetails = ({ match }) => {
                             <h4 className="mt-2">Description:</h4>
                             <p>{product.description}</p>
                             <hr />
+                            <div className="alert alert-info mt-5 bold" type='alert'>NOTE: 2 to 3 Days Prior Delivery</div>
 
 
 

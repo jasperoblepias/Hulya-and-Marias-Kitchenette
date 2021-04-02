@@ -34,9 +34,11 @@ const orderSchema = mongoose.Schema({
             type: String,
             required: true
         },
+        notes:{
+            type: String,
+        },
         date: {
             type: Date,
-
         }
     },
     orderItems: [{
@@ -76,11 +78,11 @@ const orderSchema = mongoose.Schema({
         required: true,
         default: 'Processing'
     },
-    /*
+
     deliveredAt: {
         type: Date
     },
-    */
+
     createdAt: {
         type: Date,
         default: Date.now()
