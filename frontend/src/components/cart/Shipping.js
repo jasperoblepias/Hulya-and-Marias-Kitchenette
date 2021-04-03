@@ -18,6 +18,7 @@ const Shipping = ({ history }) => {
     const minutes = String(today.getMinutes()).padStart(2,'0')
     const todayDate = mm + '/' + dd + '/' + yyyy
     const todayTime = hrs +':'+ minutes
+    const back = () => window.history.back();
 
 
     const { shippingInfo } = useSelector(state => state.cart)
@@ -168,6 +169,13 @@ const Shipping = ({ history }) => {
                         >
                             CONTINUE
                             </button>
+
+                            <button 
+                            id="backShip_btn" 
+                            className="backbtn btn-block py-3" 
+                            onClick={back}>Back
+                            </button>
+
                     </form>
 
                 </div>

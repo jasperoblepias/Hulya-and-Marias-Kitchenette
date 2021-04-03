@@ -10,11 +10,13 @@ const Product = ({ product, col }) => {
                     alt="product"
                     src={product.images[0].url}
                 />
-                <div className="card-body d-flex flex-column">
+                <div className="card-body d-flex flex-column ">
                     <h5 className="card-title">
                         <Link to={`/product/${product._id}`}>{product.name}</Link>
                     </h5>
-                    <p className="card-text">₱{product.price}.00</p>
+                    <div className=" mt-auto">
+                    </div>
+                    <p className="card-text ">₱{product.price}.00</p>
                     <Link to={`/product/${product._id}`} id="view_btn" className="btn btn-block">Order now</Link>
                 </div>
             </div>

@@ -254,6 +254,13 @@ footer {
   border-radius: 5rem;
 }
 
+#back_btn{
+  background-color: #bbbbbb;
+  border-color: #bbbbbb;
+  margin-top: 2rem;
+  border-radius: 5rem;
+}
+
 #view_order_details {
   background-color: #fa9c23;
   border-color: #fa9c23;
@@ -312,6 +319,13 @@ footer {
   border-color: #610222;
   color: white;
   margin-top: 2.5rem;
+}
+
+.backbtn{
+  background-color: #bbbbbb;
+  color: white;
+  margin-top: 3.5rem;
+  border: none;
 }
 
 .wrapper form a {
@@ -788,4 +802,10 @@ a{
 .bold{
   font-size: larger;
   font-weight: bold;
+}
+
+.goToHome{
+  font-size: larger;
+  font-weight: bold;
+  text-decoration: underline;
 }

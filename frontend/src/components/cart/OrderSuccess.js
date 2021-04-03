@@ -18,7 +18,7 @@ const OrderSuccess = () => {
                     <br></br>
                     <h2>Wait for an email for confirmation of your reservation</h2>
                     <br></br>
-                    <Link to='/' > Go to Home</Link>
+                    <Link to='/' className="goToHome"> Go to Home</Link>
                 </div>
 
             </div>

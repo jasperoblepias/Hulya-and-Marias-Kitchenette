@@ -11,7 +11,6 @@ import ProductDetails from './components/product/ProductDetails'
 import Cart from './components/cart/Cart'
 import Shipping from './components/cart/Shipping'
 import ConfirmOrder from './components/cart/ConfirmOrder'
-import Payment from './components/cart/Payment'
 import OrderSuccess from './components/cart/OrderSuccess'
 
 // Order Imports
@@ -93,7 +92,6 @@ function App() {
           <Route path="/shipping" component={Shipping} />
           <Route path="/confirm" component={ConfirmOrder} exact />
           <Route path="/success" component={OrderSuccess} />
-          <Route path="/payment" component={Payment} />
 
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />

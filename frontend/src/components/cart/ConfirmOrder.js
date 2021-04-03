@@ -16,6 +16,7 @@ const ConfirmOrder = ({ history }) => {
     const dispatch = useDispatch();
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const back = () => window.history.back();
     const { cartItems, shippingInfo } = useSelector(state => state.cart)
     // const { error } = useSelector(state => state.newOrder)
     
@@ -100,14 +101,12 @@ const ConfirmOrder = ({ history }) => {
 
                         <hr />
                         <button id="checkout_btn" className="btn btn-primary btn-block" onClick={handleShow}>Confirm</button>
+                        <button id="back_btn" className="btn btn-primary btn-block" onClick={back}>Back</button>
                     </div>
                 </div>
 
 
             </div>
-
-
-
 
             <Modal
                 show={show}
