@@ -3,7 +3,8 @@ const Product = require('../models/product');
 
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
-const sendEmailCustomer = require('../utils/sendEmailcustomer');
+const sendEmailCustomer = require('../utils/sendEmailCustomer');
+const sendEmailAdmin = require('../utils/sendEmailAdmin');
 
 // Create a new order   =>  /api/v1/order/new
 exports.newOrder = catchAsyncErrors(async(req, res, next) => {
@@ -48,6 +49,23 @@ exports.newOrder = catchAsyncErrors(async(req, res, next) => {
         message
     })
 
+    const msg = `
+                <center>
+                <img src= https://res.cloudinary.com/djccz4qpk/image/upload/v1617281661/ham_logo_u7boxc.png>
+                <br>
+                <p><i>This is a system generated message. Please DO NOT REPLY to this email.</i></p>
+                <br>
+                <p>You have received a new order pending for confirmation!<br>Please browse the orders page on the admin dashboard and check the latest order.</p>
+                </center>
+                `
+
+    await sendEmailAdmin({
+        // change to admin email (hulyaandmarias@gmail.com)
+        email: 'sazon.levi19@gmail.com',
+        subject: "Hulya and Maria's Kitchenette: New Order",
+        msg
+    })
+
     res.status(200).json({
         success: true,
         order
@@ -89,8 +107,8 @@ exports.allOrders = catchAsyncErrors(async(req, res, next) => {
     orders.forEach(order => {
         if (order.orderStatus === 'Delivered') {
             totalAmount += order.itemsPrice
-    }
-        
+        }
+
     })
 
     res.status(200).json({
