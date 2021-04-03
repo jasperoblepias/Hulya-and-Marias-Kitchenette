@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 import MetaData from '../layout/MetaData'
 import Loader from '../layout/Loader'
@@ -97,7 +97,8 @@ const ProcessOrder = ({ match }) => {
                                                 </div>
 
                                                 <div className="col-5 col-lg-5">
-                                                    <Link to={`/products/${item.product}`}>{item.name}</Link>
+                                                    {item.name}
+                                                    {/* <Link to={`/products/${item.product}`}></Link> */}
                                                 </div>
 
 

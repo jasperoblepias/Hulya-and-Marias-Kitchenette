@@ -19,7 +19,6 @@ const OrdersList = ({ history }) => {
     const { loading, error, orders } = useSelector(state => state.allOrders);
     const { isDeleted } = useSelector(state => state.order)
 
-
     useEffect(() => {
         dispatch(allOrders());
 
@@ -92,7 +91,7 @@ const OrdersList = ({ history }) => {
                 customerName: order.shippingInfo.name,
                 customerEmail: order.shippingInfo.email,
                 date: order.shippingInfo.date,
-                numofItems: order.orderItems.length,
+                numofItems: order.orderItems.reduce((acc, item) => (acc + Number(item.quantity)), 0),
                 amount: `₱${order.itemsPrice}`,
                 status: order.orderStatus && String(order.orderStatus).includes('Delivered')
                     ? <p style={{ color: 'green' }}><b>{order.orderStatus}</b></p>
