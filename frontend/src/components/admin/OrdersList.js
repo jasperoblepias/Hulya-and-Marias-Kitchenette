@@ -95,8 +95,8 @@ const OrdersList = ({ history }) => {
                 numofItems: order.orderItems.length,
                 amount: `₱${order.itemsPrice}`,
                 status: order.orderStatus && String(order.orderStatus).includes('Delivered')
-                    ? <p style={{ color: 'green' }}>{order.orderStatus}</p>
-                    : <p style={{ color: 'red' }}>{order.orderStatus}</p>,
+                    ? <p style={{ color: 'green' }}><b>{order.orderStatus}</b></p>
+                    : <p style={{ color: 'red' }}><b>{order.orderStatus}</b></p>,
                 actions: <Fragment>
                     <Link to={`/admin/order/${order._id}`} className="btn btn-primary py-1 px-2">
                         <i className="fa fa-eye white"></i>
