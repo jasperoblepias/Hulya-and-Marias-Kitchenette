@@ -1,31 +1,22 @@
 import React from 'react'
 import { Fragment} from 'react'
-
-import { useDispatch, useSelector } from 'react-redux'
-import { useAlert } from 'react-alert'
-import { logout } from '../../actions/userActions'
+import {useSelector } from 'react-redux'
 
 import '../../App.css'
 
 const Header1 = () => {
 
-    const alert = useAlert();
-    const dispatch = useDispatch();
 
-    const { user, loading } = useSelector(state => state.auth)
+
     const { cartItems } = useSelector(state => state.cart)
 
-    const logoutHandler = () => {
-        dispatch(logout());
-        alert.success('Logged out successfully.')
-    }
+
 
     return (
         <Fragment>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
                 <a class="navbar-brand" href="/">
-                    <img src="/images/ham_logo.png" />
+                    <img src="/images/ham_logo.png" alt="hamlogo"/>
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -73,24 +64,6 @@ const Header1 = () => {
                         <li class="nav-item active">
                             <a class="nav-link" href="/cart"><i className="fa fa-shopping-cart"></i>Cart<span id="cart_count">  {cartItems.length}</span></a>
                         </li>
-        
-                        {/* <li class="nav-item dropdown ">
-                            
-                            <a type="button" class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" 
-                            aria-haspopup="true" aria-expanded="false" >{user && user.name}</a>
-                            
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                
-                                {user && user.role === 'admin' && (
-                                    <a class="dropdown-item" href="/Dashboard">Dashboard</a> 
-                                )}
-                                    <a class="dropdown-item" href="/orders/me">Orders</a> 
-                                    <a class="dropdown-item" href="/me">Profile</a>
-                                    <a class="dropdown-item" href="#" onClick={logoutHandler}>Logout</a> 
-
-                                
-                            </div>
-                        </li> */}
 
                     </ul>
 

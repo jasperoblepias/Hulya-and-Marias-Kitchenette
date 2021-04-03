@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { logout } from '../../actions/userActions'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { useAlert } from 'react-alert'
 
 const Sidebar = () => {

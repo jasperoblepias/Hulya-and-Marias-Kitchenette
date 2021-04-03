@@ -43,7 +43,6 @@ import ProtectedRoute from './components/route/ProtectedRoute'
 import { loadUser } from './actions/userActions'
 import { useSelector } from 'react-redux'
 import store from './store'
-// import axios from 'axios'
 
 import Homepage from './components/Homepage'
 import Pasta from './components/menu/Pasta'
@@ -105,9 +104,9 @@ function App() {
           <ProtectedRoute path="/order/:id" component={OrderDetails} exact />
         </div>
 
-        <ProtectedRoute path="/profile" component={Profile} exact />
-        <ProtectedRoute path="/profile/update" component={UpdateProfile} exact />
-        <ProtectedRoute path="/password/update" component={UpdatePassword} exact />
+        <ProtectedRoute path="/profile" isAdmin={true} component={Profile} exact />
+        <ProtectedRoute path="/profile/update" isAdmin={true} component={UpdateProfile} exact />
+        <ProtectedRoute path="/password/update" isAdmin={true} component={UpdatePassword} exact />
         <ProtectedRoute path="/dashboard" isAdmin={true} component={Dashboard} exact />
         <ProtectedRoute path="/admin/products" isAdmin={true} component={ProductsList} exact />
         <ProtectedRoute path="/admin/product" isAdmin={true} component={NewProduct} exact />
@@ -116,7 +115,6 @@ function App() {
         <ProtectedRoute path="/admin/order/:id" isAdmin={true} component={ProcessOrder} exact />
         <ProtectedRoute path="/admin/users" isAdmin={true} component={UsersList} exact />
         <ProtectedRoute path="/admin/user/:id" isAdmin={true} component={UpdateUser} exact />
-        {/* <ProtectedRoute path="/admin/reviews" isAdmin={true} component={ProductReviews} exact /> */}
 
         {!loading && (!isAuthenticated || user.role !== 'admin') && (
           <Footer />

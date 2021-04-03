@@ -16,15 +16,14 @@ const Dashboard = () => {
     const dispatch = useDispatch();
 
     const { products } = useSelector(state => state.products)
-    const { users } = useSelector(state => state.allUsers)
     const { orders, totalAmount, loading, } = useSelector(state => state.allOrders)
 
-    let outOfStock = 0;
-    products.forEach(product => {
-        if (product.stock === 0) {
-            outOfStock += 1;
-        }
-    })
+    // let outOfStock = 0;
+    // products.forEach(product => {
+    //     if (product.stock === 0) {
+    //         outOfStock += 1;
+    //     }
+    // })
 
     useEffect(() => {
         dispatch(getAdminProducts())

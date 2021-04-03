@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import Loader from '../layout/Loader'
 
 
 const AboutUs = () => {
@@ -15,7 +14,7 @@ const AboutUs = () => {
                             <h1 className="AboutUstxt">
                                 About Us
                             </h1>
-                        </div><img className="HulyaAndMariaspng" alt="Bootstrap Image Preview" src="/images/HulyaAndMarias.png"></img>
+                        </div><img className="HulyaAndMariaspng" alt="hulya" src="/images/HulyaAndMarias.png"></img>
                         <p id="AboutUsParagraph">
 
                                      Hulya & Maria's Kitchenette is an online food delivery, serving family favorite dishes inspired by our beloved mother Maria. 

@@ -37,7 +37,7 @@ const Homepage = ({ history, location }) => {
             dispatch(clearErrors());
         }
 
-    }, [dispatch, alert, isAuthenticated, error, history])
+    }, [dispatch, alert, isAuthenticated, error, redirect, history])
 
     return (
         <Fragment>

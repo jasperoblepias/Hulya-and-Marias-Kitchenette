@@ -14,12 +14,12 @@ const Seafood = ({ match }) => {
     const [currentPage] = useState(1)
     const [price] = useState([1, 5000])
     const [category] = useState('Seafood')
-    const [rating] = useState(0)
+
 
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, products, error, productsCount, resPerPage, filteredProductsCount } = useSelector(state => state.products)
+    const { loading, products, error} = useSelector(state => state.products)
 
     const keyword = match.params.keyword
 
@@ -28,16 +28,12 @@ const Seafood = ({ match }) => {
             return alert.error(error)
         }
 
-        dispatch(getProducts(keyword, currentPage, price, category, rating));
+        dispatch(getProducts(keyword, currentPage, price, category));
 
 
-    }, [dispatch, alert, error, keyword, currentPage, price, category, rating])
+    }, [dispatch, alert, error, keyword, currentPage, price, category])
 
 
-    let count = productsCount;
-    if (keyword) {
-        count = filteredProductsCount
-    }
 
     return (
         <Fragment>

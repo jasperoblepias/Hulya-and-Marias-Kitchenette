@@ -3,26 +3,13 @@ import MetaData from '../layout/MetaData'
 import CheckoutSteps from './CheckoutSteps'
 import { useDispatch, useSelector } from 'react-redux'
 import { saveShippingInfo } from '../../actions/cartActions'
-//testing lines for phone number
-// import parsePhoneNumber from 'libphonenumber-js'
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 
 
 
 const Shipping = ({ history }) => {
-
-// returns { regions: [...], provinces: [...], citiies: [...] }
-var philippines = require('philippines');
-
-// to get individual data
-var regions = require('philippines/regions');
-var provinces = require('philippines/provinces');
-var cities = require('philippines/cities');
-    //const philippines = Object.values(philippines)
-
-//testing sa phone number
-
+    var cities = require('philippines/cities');
     const today = new Date()
     const dd = String(today.getDate()).padStart(2, '0')
     const mm = String(today.getMonth() + 1).padStart(2, '0')
@@ -98,13 +85,13 @@ var cities = require('philippines/cities');
                                 <option value=''>- -</option>
 
                                 {cities.map(city => {
-                                        if(city.province == 'MM') {
-                                            return  <option  key={city.name} value=  {city.name}> {city.name}
-
-                                            </option>
+                                        if(city.province === 'MM') {
+                                            return  <option  key={city.name} value={city.name}>{city.name}</option>
 
                                         }
-                                    })}
+
+                                        return null
+                                    })} 
 
                             </select>
                         </div>

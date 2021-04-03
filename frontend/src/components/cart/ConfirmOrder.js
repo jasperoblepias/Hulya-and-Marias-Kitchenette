@@ -1,26 +1,24 @@
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { createOrder, clearErrors } from '../../actions/orderActions'
+// import { createOrder, clearErrors } from '../../actions/orderActions'
+import { createOrder} from '../../actions/orderActions'
 import MetaData from '../layout/MetaData'
 import CheckoutSteps from './CheckoutSteps'
-import { useAlert } from 'react-alert'
+// import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
-import { saveShippingInfo } from '../../actions/cartActions'
+
 import { Button, Modal } from 'react-bootstrap';
 
 
 const ConfirmOrder = ({ history }) => {
 
     const [show, setShow] = useState(false);
-    const alert = useAlert();
     const dispatch = useDispatch();
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const { cartItems, shippingInfo } = useSelector(state => state.cart)
-    const { user } = useSelector(state => state.auth)
-    const { error } = useSelector(state => state.newOrder)
-
-
+    // const { error } = useSelector(state => state.newOrder)
+    
     // Calculate Order Prices
     const itemsPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)
 

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Loader from '../layout/Loader'
+
 
 const ContactUs = () => {
 
@@ -11,7 +11,7 @@ const ContactUs = () => {
                     <h1 id="ContactUsTxt">
                         Contact Us
 			</h1>
-                    <img className="HulyaAndMariaspng" alt="Bootstrap Image Preview" src="/images/contact_us.png"></img>
+                    <img className="HulyaAndMariaspng" alt="hulya" src="/images/contact_us.png"></img>
                 </div>
             </div>
             <div class="row">
@@ -59,7 +59,7 @@ const ContactUs = () => {
                             <i class="fa fa-facebook-official fa-2x" aria-hidden="true" id="FBLogo"> </i>
                         </div>
                         <div class="col-xl-6 col-sm-6 mb-3">
-                            <a href="https://www.facebook.com/hulyaandmaria" target="_blank">
+                            <a href="https://www.facebook.com/hulyaandmaria" >
 
                                 <p className="para"> Hulya & Maria's Kitchenette </p>
                             </a>
@@ -87,7 +87,7 @@ const ContactUs = () => {
                         </div>
                         <div class="col-xl-6 col-sm-6 mb-3">
 
-                            <a href="https://www.instagram.com/hulyaandmarias/?hl=en" target="_blank">
+                            <a href="https://www.instagram.com/hulyaandmarias/?hl=en">
 
                                 <p className="para"> @hulyaandmarias </p>
                             </a>
