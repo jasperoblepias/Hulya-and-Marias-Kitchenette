@@ -92,7 +92,7 @@ const OrdersList = ({ history }) => {
                 customerEmail: order.shippingInfo.email,
                 date: order.shippingInfo.date,
                 numofItems: order.orderItems.reduce((acc, item) => (acc + Number(item.quantity)), 0),
-                amount: `₱${order.itemsPrice}`,
+                amount: `₱${order.itemsPrice}.00`,
                 status: order.orderStatus && String(order.orderStatus).includes('Delivered')
                     ? <p style={{ color: 'green' }}><b>{order.orderStatus}</b></p>
                     : <p style={{ color: 'red' }}><b>{order.orderStatus}</b></p>,
