@@ -18,12 +18,12 @@ const Dashboard = () => {
     const { products } = useSelector(state => state.products)
     const { orders, totalAmount, loading, } = useSelector(state => state.allOrders)
 
-    // let outOfStock = 0;
-    // products.forEach(product => {
-    //     if (product.stock === 0) {
-    //         outOfStock += 1;
-    //     }
-    // })
+    let outOfStock = 0;
+    products.forEach(product => {
+        if (product.stock === 0) {
+            outOfStock += 1;
+        }
+    })
 
     useEffect(() => {
         dispatch(getAdminProducts())
@@ -57,7 +57,7 @@ const Dashboard = () => {
                             </div>
 
                             <div className="row pr-4">
-                                <div className="col-xl-6 col-sm-6 mb-3">
+                                <div className="col-xl-4 col-sm-6 mb-3">
                                     <div className="card text-white bg-success o-hidden h-100">
                                         <div className="card-body">
                                             <div className="text-center card-font-size">Products<br /> <b>{products && products.length}</b></div>
@@ -72,7 +72,7 @@ const Dashboard = () => {
                                 </div>
 
 
-                                <div className="col-xl-6 col-sm-6 mb-3">
+                                <div className="col-xl-4 col-sm-6 mb-3">
                                     <div className="card text-white bg-danger o-hidden h-100">
                                         <div className="card-body">
                                             <div className="text-center card-font-size">Orders<br /> <b>{orders && orders.length}</b></div>
@@ -99,16 +99,22 @@ const Dashboard = () => {
                                             </span>
                                         </Link>
                                     </div>
-                                </div>
+                                </div> */}
 
 
-                                <div className="col-xl-3 col-sm-6 mb-3">
+                                <div className="col-xl-4 col-sm-6 mb-3">
                                     <div className="card text-white bg-warning o-hidden h-100">
                                         <div className="card-body">
-                                            <div className="text-center card-font-size">Out of Stock<br /> <b>{outOfStock}</b></div>
+                                            <div className="text-center card-font-size">Not available<br/> <b>{outOfStock}</b></div>
                                         </div>
+                                        <Link className="card-footer text-white clearfix small z-1" to="/admin/products">
+                                            <span className="float-left">View Details</span>
+                                            <span className="float-right">
+                                                <i className="fa fa-angle-right"></i>
+                                            </span>
+                                        </Link>
                                     </div>
-                                </div> */}
+                                </div>
                             </div>
                         </Fragment>
                     )}

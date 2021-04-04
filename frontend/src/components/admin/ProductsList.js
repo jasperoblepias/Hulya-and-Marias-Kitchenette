@@ -59,6 +59,11 @@ const ProductsList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
+                    label: 'Stock',
+                    field: 'stock',
+                    sort: 'asc'
+                },
+                {
                     label: 'Price',
                     field: 'price',
                     sort: 'asc'
@@ -77,7 +82,7 @@ const ProductsList = ({ history }) => {
                 name: product.name,
                 category: product.category,
                 price: `₱${product.price}.00`,
-                stock: product.stock,
+                stock: product.stock > 0 ? 'Available' : 'Not Available',
                 actions: <Fragment>
                     <Link to={`/admin/product/${product._id}`} className="btn btn-primary py-1 px-2">
                         <i className="fa fa-pencil"></i>
