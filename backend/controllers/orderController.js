@@ -61,8 +61,7 @@ exports.newOrder = catchAsyncErrors(async(req, res, next) => {
 
     await sendEmailAdmin({
         // change to admin email (hulyaandmarias@gmail.com)
-        // email: 'sazon.levi19@gmail.com',
-        email: 'jasperoblepias@gmail.com',
+        email: 'hulyaandmarias@gmail.com',
         subject: "Hulya and Maria's Kitchenette: New Order",
         msg
     })
