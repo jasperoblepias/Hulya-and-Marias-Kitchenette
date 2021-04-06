@@ -71,6 +71,7 @@ const ProcessOrder = ({ match }) => {
                                     <p><b>Phone:</b> {shippingInfo && shippingInfo.phoneNo}</p>
                                     <p className="mb-4"><b>Address:</b>{shippingDetails}</p>
                                     <p><b>Email:</b> {shippingInfo && shippingInfo.email}</p>
+                                    <p><b>Date:</b> {shippingInfo && shippingInfo.date}</p>
                                     <p><b>Amount:</b> ₱{order && order.itemsPrice}.00</p>
 
                                     <hr />
