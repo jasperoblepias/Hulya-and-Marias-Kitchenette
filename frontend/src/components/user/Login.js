@@ -23,9 +23,9 @@ const Login = ({ history, location }) => {
 
     useEffect(() => {
 
-        // if (isAuthenticated) {
-        //     history.push(redirect)
-        // }
+        if (isAuthenticated) {
+            history.push(redirect)
+        }
 
         if (error) {
             alert.error(error);
@@ -37,7 +37,7 @@ const Login = ({ history, location }) => {
     const submitHandler = (e) => {
         e.preventDefault();
         dispatch(login(email, password))
-        history.push(redirect)
+        // history.push(redirect)
     }
 
     return (

@@ -33,7 +33,7 @@ const Homepage = ({ history, location }) => {
         }
 
         if (error) {
-            alert.error(error);
+            // alert.error(error);
             dispatch(clearErrors());
         }
 
